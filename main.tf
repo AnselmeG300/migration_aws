@@ -7,8 +7,8 @@ provider "aws" {
 
 resource "aws_volume_attachment" "ebs_att" {
   device_name = "/dev/xvda"
-  volume_id   = aws_ebs_volume.wordpress_ebs.id
-  instance_id = aws_instance.wordpress.id
+  volume_id   = "${aws_ebs_volume.wordpress_ebs.id}"
+  instance_id = "${aws_instance.wordpress.id}"
 }
 
 resource "aws_eip_association" "eip_assoc" {

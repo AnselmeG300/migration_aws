@@ -14,13 +14,6 @@ resource "aws_instance" "wordpress" {
     Name = "${var.maintainer}"
   }
 
-  ebs_block_device {
-    device_name = "/dev/sdh"  # Remplacez par le nom du périphérique souhaité
-    volume_id   = aws_ebs_volume.wordpress_ebs.id
-  }
-
-  
-
   provisioner "local-exec" {
     command = "echo PUBLIC IP: ${self.public_ip}"
   }
