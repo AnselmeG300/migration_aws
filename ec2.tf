@@ -42,7 +42,7 @@ resource "aws_instance" "wordpress" {
     connection {
       type        = "ssh"
       user        = var.user
-      private_key = ""
+      private_key = file("./devops-kamsu.pem")
       host        = self.public_ip
     }
   }
