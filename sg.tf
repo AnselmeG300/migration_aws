@@ -127,6 +127,16 @@ resource "aws_security_group_rule" "ec2_egress_reply" {
   to_port           = 65535
 }
 
+# EC2 < Any : Ephemeral
+resource "aws_security_group_rule" "ec2_ingress_reply" {
+  security_group_id = aws_security_group.wordpress.id
+  type              = "ingress"
+  cidr_blocks       = ["0.0.0.0/0"]
+  protocol          = "all"
+  from_port         = 1024
+  to_port           = 65535
+}
+
 
 
 
