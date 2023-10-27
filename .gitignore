@@ -37,4 +37,10 @@ override.tf.json
 .terraformrc
 terraform.rc
 
+# env
+.env
+
+# private_key
+devops-key.pem
+
 # End of https://www.toptal.com/developers/gitignore/api/terraform
