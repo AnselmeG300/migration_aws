@@ -6,7 +6,7 @@ variable "aws_common_tag" {
 
 variable "size" {
   type    = number
-  default = 2
+  default = 3
 }
 
 variable "AZ" {
