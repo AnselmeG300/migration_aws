@@ -12,7 +12,7 @@ resource "aws_instance" "wordpress" {
   ]
 
   tags = {
-    Name = "${var.maintainer}-sg"
+    Name = "${var.maintainer}"
   }
 
   
