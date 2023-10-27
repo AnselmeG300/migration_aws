@@ -5,7 +5,6 @@ resource "aws_instance" "wordpress" {
   instance_type     = var.ec2_instance_type
 
   vpc_security_group_ids = ["${aws_security_group.wordpress.id}",
-    "${aws_security_group.wordpress_elb.id}",
     "${aws_security_group.wordpress_ebs.id}",
     "${aws_security_group.wordpress_db.id}",
     "${aws_security_group.wordpress_ssh.id}"
