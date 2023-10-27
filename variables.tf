@@ -53,7 +53,7 @@ variable "rds_instance_type" {
 
 variable "db_password" {
   description = "DO NOT CHANGE - Password for the master DB user. Note that this may show up in logs, and it will be stored in the state file."
-  default     = "380cccf909"
+  default     = "dbpass"
   type        = string
 }
 
