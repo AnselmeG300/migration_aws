@@ -41,7 +41,7 @@ resource "aws_instance" "wordpress" {
 
     connection {
       type        = "ssh"
-      user        = "ubuntu" # Default username of the AMI
+      user        = var.user
       private_key = file("./devops-key.pem")
       host        = self.public_ip
     }
