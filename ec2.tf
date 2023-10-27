@@ -14,9 +14,9 @@ resource "aws_instance" "wordpress" {
     Name = "${var.maintainer}"
   }
 
-  root_block_device {
-    volume_id = aws_ebs_volume.wordpress_ebs.id
-    volume_size = 3  # Assurez-vous que la taille correspond à celle du volume EBS
+  ebs_block_device {
+    device_name = "/dev/sdh"  # Remplacez par le nom du périphérique souhaité
+    volume_id   = aws_ebs_volume.wordpress_ebs.id
   }
 
   
