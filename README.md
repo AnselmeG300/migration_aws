@@ -1,1 +1,1 @@
-migration_aws(paris-> Irlande)
+migration_aws(paris->> Irlande)
