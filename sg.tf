@@ -3,30 +3,30 @@
 ### Security Groups
 resource "aws_security_group" "wordpress_ebs" {
   name        = "wordpress_ebs"
-  vpc_id      = "vpc-0574466bd4f6eb2d0"
+  vpc_id      = "vpc-0d5a1377ded45f931"
   description = "WordPress EBS"
 }
 resource "aws_security_group" "wordpress_db" {
   name        = "wordpress_db"
-  vpc_id      = "vpc-0574466bd4f6eb2d0"
+  vpc_id      = "vpc-0d5a1377ded45f931"
   description = "WordPress Database"
 }
 
 resource "aws_security_group" "wordpress" {
   name        = "wordpress"
-  vpc_id      = "vpc-0574466bd4f6eb2d0"
+  vpc_id      = "vpc-0d5a1377ded45f931"
   description = "WordPress EC2"
 }
 
 resource "aws_security_group" "wordpress_elb" {
   name        = "WordPress ELB"
-  vpc_id      = "vpc-0574466bd4f6eb2d0"
+  vpc_id      = "vpc-0d5a1377ded45f931"
   description = "Control the access to the ELB."
 }
 
 resource "aws_security_group" "wordpress_ssh" {
   name        = "WordPress ssh"
-  vpc_id      = "vpc-0574466bd4f6eb2d0"
+  vpc_id      = "vpc-0d5a1377ded45f931"
   description = "traffic ssh."
 }
 
