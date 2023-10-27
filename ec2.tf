@@ -35,14 +35,14 @@ resource "aws_instance" "wordpress" {
       "sudo curl -L https://github.com/docker/compose/releases/download/1.23.2/docker-compose-$(uname -s)-$(uname -m) -o /usr/local/bin/docker-compose",
       "sudo chmod +x /usr/local/bin/docker-compose",
       "cd migration",                       # Accédez au dossier de destination
-      "/usr/local/bin/docker-compose up -d", # Lancez le Docker Compose en arrière-plan"
+      "sudo /usr/local/bin/docker-compose up -d", # Lancez le Docker Compose en arrière-plan"
 
     ]
 
     connection {
       type        = "ssh"
       user        = var.user
-      private_key = file("./devops-key.pem")
+      private_key = ""
       host        = self.public_ip
     }
   }
