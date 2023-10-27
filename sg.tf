@@ -137,7 +137,7 @@ resource "aws_security_group_rule" "ec2_egress_reply" {
 resource "aws_security_group_rule" "rds_ingress_mysql" {
   security_group_id = aws_security_group.wordpress_db.id
   type              = "ingress"
-  cidr_blocks       = ["${aws_instance.wordpress.private_ip}" / 32]
+  cidr_blocks       = ["172.31.43.236/32"]
   protocol          = "tcp"
   from_port         = 3306
   to_port           = 3306
