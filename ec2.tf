@@ -26,7 +26,8 @@ resource "aws_instance" "wordpress" {
 
     inline = [
       "mkdir -p migration",                                                  # Créez le dossier de destination
-      "echo '${file("docker-compose.yml")}' > migration/docker-compose.yml", # Copie le contenu du fichier Docker Compose
+      "echo '${file("docker-compose.yml")}' > migration/docker-compose.yml",
+      "echo '${file(".env")}' > migration/.env",# Copie le contenu du fichier env
       "sudo curl -fsSL https://get.docker.com -o get-docker.sh",
       "sudo sh get-docker.sh",
       "sudo usermod -aG docker ubuntu",
