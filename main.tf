@@ -1,12 +1,10 @@
 provider "aws" {
-  region     = "eu-west-2"
-  access_key = ""
-  secret_key = ""
+  region     = "eu-west-1"
 }
 
 
 resource "aws_volume_attachment" "ebs_att" {
-  device_name = "/dev/xvda"
+  device_name = "/dev/sdh"
   volume_id   = "${aws_ebs_volume.wordpress_ebs.id}"
   instance_id = "${aws_instance.wordpress.id}"
 }

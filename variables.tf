@@ -11,7 +11,7 @@ variable "size" {
 
 variable "AZ" {
   type    = string
-  default = "eu-west-2b"
+  default = "eu-west-1c"
 }
 
 variable "ec2_instance_type" {
@@ -28,7 +28,7 @@ variable "maintainer" {
 
 variable "ssh_key" {
   type    = string
-  default = "devops-key"
+  default = "centos"
 }
 
 
@@ -90,10 +90,3 @@ variable "instance_type" {
   type        = string
   default     = "t2.micro"
 }
-
-
-
-
-
-
-

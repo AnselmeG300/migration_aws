@@ -3,25 +3,25 @@
 ### Security Groups
 resource "aws_security_group" "wordpress_ebs" {
   name        = "wordpress_ebs"
-  vpc_id      = "vpc-04bdf742e2617c0ef"
+  # vpc_id      = "vpc-04bdf742e2617c0ef"
   description = "WordPress EBS"
 }
 
 resource "aws_security_group" "wordpress_db" {
   name        = "wordpress_db"
-  vpc_id      = "vpc-04bdf742e2617c0ef"
+  # vpc_id      = "vpc-04bdf742e2617c0ef"
   description = "WordPress Database"
 }
 
 resource "aws_security_group" "wordpress" {
   name        = "wordpress"
-  vpc_id      = "vpc-04bdf742e2617c0ef"
+  # vpc_id      = "vpc-04bdf742e2617c0ef"
   description = "WordPress EC2"
 }
 
 resource "aws_security_group" "wordpress_ssh" {
   name        = "WordPress ssh"
-  vpc_id      = "vpc-04bdf742e2617c0ef"
+  # vpc_id      = "vpc-04bdf742e2617c0ef"
   description = "traffic ssh."
 }
 
@@ -82,7 +82,7 @@ resource "aws_security_group_rule" "ec2_ingress_reply" {
 resource "aws_security_group_rule" "rds_ingress_mysql" {
   security_group_id = aws_security_group.wordpress_db.id
   type              = "ingress"
-  cidr_blocks       = ["172.31.43.236/32"]
+  cidr_blocks       = ["${aws_instance.wordpress.private_ip}/32"]
   protocol          = "tcp"
   from_port         = 3306
   to_port           = 3306
